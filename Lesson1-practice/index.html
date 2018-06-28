@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS1 Practice</title>
+</head>
+<body>
+
+<!-- Summ of two numbers -->
+<!--<script>
+    var a,
+        b,
+        sum;
+    a = +prompt('Введите первое число');
+    b = +prompt('Введите второе число');
+    sum = 'Сумма чисел равна ' + (a + b);
+    alert(sum);
+</script>-->
+<!-- Two dices and head eagle -->
+<script>
+
+    var a,b,c,d,e,f,rand1,rand2;
+    a = Math.floor(Math.random()*6) + 1;
+    console.log(a);
+    a = 'Первый кубик выдал: ' + a;
+    b = Math.floor(Math.random()*6) + 1;
+    console.log(b);
+    b = 'Второй кубик выдал: ' + b;
+    alert(a);
+    alert(b);
+
+    с = Math.floor(Math.random()*2) + 1;
+    console.log(с);
+    if (с === 1) {
+        alert('Выпал орел')
+    } else {
+        alert('Выпала решка')
+    }
+
+    d = +prompt('Введите максимальное значение для рандомайзера');
+    rand1 = Math.floor(Math.random()*d) + 1;
+    console.log(rand1);
+    rand1 = 'Случайное число равно ' + rand1;
+    alert(rand1);
+
+    e = +prompt('Введите число начала диапазона случайных значений');
+    f = +prompt('Введите число конца диапазона случайных значений');
+    rand2 = f-e;
+    console.log(rand2);
+    rand2 = Math.floor(Math.random()*rand2) + e;
+    console.log(rand2);
+    rand2 = 'Случайное число равно ' + rand2;
+    alert(rand2);
+
+</script>
+
+</body>
+</html>
