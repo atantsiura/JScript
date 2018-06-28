@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS1</title>
+</head>
+<body>
+<script>
+    var login,
+        password;
+    login = prompt('Введите Ваш логин');
+    console.log (login);
+    if (login === null) {
+        alert('Вход отменен');
+    } else if (login === 'Админ'){
+        password = prompt('Введите пароль');
+    } else {
+        alert('Я Вас не знаю');
+    }
+    if (password === 'Черный Властелин' ) {
+        alert('Добро пожаловать');
+    }
+</script>
+</body>
+</html>
