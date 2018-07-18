@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Text</title>
+</head>
+<body>
+<script>
+    "use strict";
+    var
+        textArray = [],
+        wordList = {},
+        arrayLengh,
+        textrandom;
+    textrandom = prompt('Введите случайный текст без знаков препинания','');
+    if (!textrandom) alert('Вы не ввели текст');
+    textArray = textrandom.split(' ');
+    console.log(textArray);
+    arrayLengh = textArray.length;
+    for (var i = 0; i < arraylenght; i++) {
+        wordList[textArray[i]] = textArray[i]+1;
+    }
+    console.log(wordList);
+
+</script>
+</body>
+</html>
