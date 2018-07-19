@@ -17,7 +17,9 @@
         simpleNumberString = "1";
 
         for (var i = 2; i < upperLimit+1; i++) {
-            simpleNumber(i)
+            if (simpleNumber(i)) {
+                simpleNumberString += ' ' + simpleNumber(i);
+            }
         }
 
         /console.log(simpleNumberString);/
@@ -31,10 +33,10 @@
         for (var i = number-1; i > 1; i--) {
             if (!(number%i)) number = false;
         }
-        if (number) simpleNumberString += ' ' + number;
+        if (number) return number;
     }
 
-
+    / simpleNumberString += ' ' + number; /
 
 </script>
 </body>

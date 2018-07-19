@@ -14,14 +14,15 @@
         alert('Вход отменен');
     } else if (login === 'Админ'){
         password = prompt('Введите пароль');
+        if (password === 'Черный Властелин' ) {
+            alert('Добро пожаловать');
+        } else {
+            alert('Пароль неверный')
+        }
     } else {
         alert('Я Вас не знаю');
     }
-    if (password === 'Черный Властелин' ) {
-        alert('Добро пожаловать');
-    } else {
-        alert('Пароль неверный')
-    }
+
 </script>
 </body>
 </html>
