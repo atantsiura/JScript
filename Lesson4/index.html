@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 4 Arrays</title>
+</head>
+<body>
+<script>
+    'use strict'
+    var
+        circleAreasArray = [],
+        circleDiametrArray = [];
+
+        /Here is the array of cirle diameters/
+    circleDiametrArray = [2, 3, 5, 8, 10];
+        /Here the function runs/
+    circleAreasArray = map(getCircleArea,circleDiametrArray);
+        /Results, initial array and result array/
+    console.log(circleDiametrArray);
+    console.log(circleAreasArray);
+
+    /Here are functions we use/
+    function map(fn, array) {
+        var tempArray = [];
+        for (var i=0; i < array.length; i++) {
+            tempArray.push(fn(array[i]));
+        }
+        return tempArray;
+    }
+
+    function getCircleArea(diametr) {
+        var area;
+        area = (Math.PI * Math.pow(((diametr / 2)),2)) / 2;
+        area = area.toFixed(2);
+        return area;
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
