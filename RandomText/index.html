@@ -7,20 +7,45 @@
 <body>
 <script>
     "use strict";
-    var
+        var
         textArray = [],
         wordList = {},
-        arrayLengh,
         textrandom;
+
+    //Getting random text from user
+
     textrandom = prompt('Введите случайный текст без знаков препинания','');
     if (!textrandom) alert('Вы не ввели текст');
+
+    //Making array from text string
+
     textArray = textrandom.split(' ');
+
+    //Checking what we've get from user
     console.log(textArray);
-    arrayLengh = textArray.length;
-    for (var i = 0; i < arraylenght; i++) {
-        wordList[textArray[i]] = textArray[i]+1;
-    }
+    console.log(textArray.length);
+
+    //Using function for getting unique words in texts and their quantity for each.
+
+    wordList = getWordsAndQuantity(textArray);
     console.log(wordList);
+
+    //Here is the function
+
+    function getWordsAndQuantity(array){
+        var
+            result = {};
+
+
+        for (var i = 0; i < array.length; i++) {
+            if (result[array[i]]) {
+                result[array[i]] += 1;
+            } else {
+                result[array[i]] = 1;
+            }
+        }
+        return result;
+    }
 
 </script>
 </body>
