@@ -17,6 +17,11 @@
     textrandom = prompt('Введите случайный текст без знаков препинания','');
     if (!textrandom) alert('Вы не ввели текст');
 
+    //Making all word to lowercase, clearing from . and ,
+
+    textrandom = textrandom.toLowerCase();
+    textrandom = textrandom.replace(/[^A-Za-zА-Яа-яЁё\s]/g, "");
+
     //Making array from text string
 
     textArray = textrandom.split(' ');
@@ -46,6 +51,146 @@
         }
         return result;
     }
+
+
+</script>
+
+<script>
+    "use strict";
+    var
+        randomArray = [],
+        filteredArray = [];
+
+    //Generating random array
+
+    randomArray = createRandomArray(1, 30, 10);
+    console.log(randomArray);
+
+    //Using filtering function
+
+    filteredArray = filterArray(canDividedFive, randomArray);
+    console.log(filteredArray);
+
+
+
+    // Functions used in script:
+
+    function gerRandomNumber(min, max) {
+        return Math.floor(min + Math.random() * (max - min -1));
+    }
+
+    function createRandomArray(min, max, quantity) {
+        var
+            result = [];
+
+        for (var i = 0; i < quantity; i++) {
+            result[i] = gerRandomNumber(min, max);
+        }
+        return result;
+    }
+
+    function canDividedFive(number) {
+        return (number % 5) ? false:true;
+    }
+
+
+    function filterArray(fn, array) {
+        var tempArray = [];
+        for (var i=0; i < array.length; i++) {
+            if (fn(array[i])) {
+                tempArray.push(array[i]);
+            }
+        }
+        return tempArray;
+    }
+
+</script>
+<script>
+
+    //Checking, is user specified year a leap year
+    "use strict";
+
+    var
+        yearUser;
+
+    //Getting year from user for checking
+
+    yearUser = +prompt('Введите год для проверки его на высокосность', '');
+
+    //Checking the correct data from user and that checking the leap year with function
+
+    if (yearUser) {
+        isLeapYear(yearUser) ? alert('Год ' + yearUser + ' является высокосным'):alert('Год ' + yearUser + ' - не высокосный');
+    } else {
+        alert('Введено неверное значение проверяемого года');
+    }
+
+    //Function used
+
+    function isLeapYear(year) {
+        return !(yearUser % 4);
+    }
+
+</script>
+
+<script>
+    //Checking the quantity of digits in number from user in between 1-10000
+
+    var
+        digitsCount = {
+        Numbers: 0,
+        Dozens: 0,
+        Hundreds: 0,
+        Thousands: 0
+        },
+        digitsCountArray = [],
+        a = 0,
+        number;
+
+    number = +prompt('Введите число в диапазоне от 1 до 10000');
+
+    //Later the input check would be added
+
+    if ((number)&&(number <= 10000)) {
+
+        digitsCountArray = getDigitCounts(number);
+        console.log(digitsCountArray);
+
+
+        for (var key in digitsCount) {
+            digitsCount[key]=digitsCountArray[a];
+            a++;
+        }
+
+        if (number === 10000) {
+            digitsCount['Thousands'] = 10
+        }
+
+        console.log('______________');
+        console.log(digitsCount);
+    } else {
+        alert('Вы ввели неверную цифру')
+    }
+
+    //Here are the function we use
+
+    function getDigitCounts(number) {
+        var array = [];
+
+        for (var i = 0; i < 4; i++) {
+            if (Math.floor((number/10) >= 1)) {
+                array.push(Math.round(((number/10) - Math.floor(number/10))*10));
+                number = Math.floor(number/10);
+            } else {
+                array.push(Math.round(((number/10) - Math.floor(number/10))*10));
+                break;
+            }
+        }
+        return array;
+    }
+
+
+
 
 </script>
 </body>
