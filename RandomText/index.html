@@ -120,7 +120,13 @@
     //Checking the correct data from user and that checking the leap year with function
 
     if (yearUser) {
-        isLeapYear(yearUser) ? alert('Год ' + yearUser + ' является высокосным'):alert('Год ' + yearUser + ' - не высокосный');
+        if (isLeapYear(yearUser) && (!(yearUser%400))) {
+            alert('Год ' + yearUser + ' является высокосным');
+        } else if (isLeapYear(yearUser) && (!(yearUser/100))){
+            alert('Год ' + yearUser + ' - не высокосный');
+        } else {
+            alert('Год ' + yearUser + ' - не высокосный');
+        }
     } else {
         alert('Введено неверное значение проверяемого года');
     }
@@ -168,7 +174,9 @@
 
         console.log('______________');
         console.log(digitsCount);
-    } else {
+    }  else if (number === 0) {
+        console.log(digitsCount);
+    }  else  {
         alert('Вы ввели неверную цифру')
     }
 
