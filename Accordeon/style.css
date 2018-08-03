@@ -1,0 +1,13 @@
+.accordeon {
+    max-width: 800px;
+    margin: 20px auto;
+}
+.accordeon-header {
+    margin: 0;
+    text-align: center;
+    background: #f3f3f3;
+    border: 1px solid gray;
+}
+.accordeon-text {
+    display: none;
+}

@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Lato, sans-serif;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-size: 14px;
+}
+a {
+    text-decoration: none;
+}
+h1, h2, h3 {
+    font-weight: normal;
+    margin: 0;
+}
+
+.widget-container {
+    min-height: 100vh;
+    background: url("../img/bgmain.jpg") no-repeat center;
+    background-size: cover;
+    padding: 145px 0;
+}
+.maincontainer {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #212534;
+    /*min-height: 545px;*/
+}
+.menuflexholder {
+    background-color: #2b3040;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+
+}
+.menu-item {
+    text-align: center;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 28px;
+} .menu-item a img {
+      opacity: 0.3;
+  }
+/*.menu-item:first-child {
+    border-bottom: 2px solid white;
+}
+*/
+
+.menu-item.active {
+    border-bottom: 2px solid white;
+}
+.active a img {
+    opacity: 1;
+}
+.menu-item h2 {
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 28px;
+ }
+
+.bottompart {
+    min-height: 430px;
+    position: relative;
+}
+.information {
+    position: absolute;
+}
+.infoflex {
+    display: flex;
+}
+.leftpart {
+    padding: 60px 40px 60px 45px;
+}
+.starholer {
+    padding-top: 25px;
+    text-align: center;
+}
+.starholer a {
+    padding-right: 7px;
+}
+.starholer a:last-child {
+    padding-right: 0;
+}
+
+.rightpart {
+    padding: 60px 40px 60px 0;
+}
+.rightpart h1 {
+    font-size: 32px;
+    padding: 15px 0;
+
+}
+.info {
+    color: #999cae;
+    min-height: 145px;
+
+}
+.release {
+    padding-bottom: 40px;
+    font-size: 14px;
+
+}
+.priceflex {
+    display: flex;
+    justify-content:space-between;
+}
+.discount {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fedc3f;
+    padding: 4px 0 8px;
+}
+.price {
+    font-size: 32px;
+    line-height: 30px;
+}
+.button {
+    background-color: #13e28d;
+    border: 0 solid transparent;
+    width: 165px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 55px;
+}
+.rating {
+    padding: 60px 40px 65px;
+    position: absolute;
+    display: none;
+
+}
+.where {
+    padding: 60px 40px 65px;
+    position: absolute;
+    display: none;
+}
