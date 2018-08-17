@@ -23,6 +23,45 @@ $(document).ready(function () {
     var mapElement = document.getElementById("map");
     $(mapElement).hide();
 
+// Reading city from input field
+    var cityFromUserInput;
+
+    $('#city_button').click(function () {
+        cityFromUserInput = $('#city_input').val();
+        console.log(cityFromUserInput);
+        console.log('click');
+        $('#city_input').val('');
+        //Creating AJAX request from the city, got from user. Only in Ukraine, at the moment. The next upgrade would be the
+        //object with the cities ID and cities names, for big cities of Ukraine.
+        if (cityFromUserInput) {
+            var appId = '47e5ad34afbd0cad1fbeabe4bed16e64',
+                url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityFromUserInput + ',ua&units=metric&lang=ua&APPID=' + appId;
+            request = $.ajax({
+                url: url,
+                method: "GET",
+                dataType: "json"
+            });
+            url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityFromUser + ',ua&units=metric&lang=ua&APPID=' + appId;
+            request.done(function (msg) {
+                display(msg);
+                //showMap(mapElement, msg.city.coord);
+
+            });
+            request.fail(function( jqXHR, textStatus ) {
+                alert( "Request failed: " + textStatus );
+            });
+            $('.slick_holder').slick({
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                arrows: true
+            });
+        } else {
+            alert('Название города не введено');
+            }
+
+    });
+    console.log($('#city_button'));
+
     var //appId = '47e5ad34afbd0cad1fbeabe4bed16e64',
         //url = 'https://api.openweathermap.org/data/2.5/forecast?q=Kyrylivka,ua&units=metric&lang=ua&APPID=' + appId,
         //request = $.ajax({
@@ -35,36 +74,12 @@ $(document).ready(function () {
         cityFromUser,
         $weather = $('#weatherpart');
 
-    cityFromUser = prompt('Your city');
-
-    if (cityFromUser) {
-        var appId = '47e5ad34afbd0cad1fbeabe4bed16e64',
-            url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityFromUser + ',ua&units=metric&lang=ua&APPID=' + appId;
-            request = $.ajax({
-                url: url,
-                method: "GET",
-                dataType: "json"
-            }),
-        console.log(cityFromUser);
-            console.log(url);
-        url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityFromUser + ',ua&units=metric&lang=ua&APPID=' + appId;
-        request.done(function(msg) {
-            console.log(msg);
-            display(msg);
-        //showMap(mapElement, msg.city.coord);
-        });
-    }
 
 
-    //request.done(function(msg) {
-    //    console.log(msg);
-    //    display(msg);
-        //showMap(mapElement, msg.city.coord);
+
+    //request.fail(function( jqXHR, textStatus ) {
+    //    alert( "Request failed: " + textStatus );
     //});
-
-    request.fail(function( jqXHR, textStatus ) {
-        alert( "Request failed: " + textStatus );
-    });
 
     function display(msg) {
         var cityData = msg.city,
@@ -77,8 +92,8 @@ $(document).ready(function () {
         $cityDetails.find('.city_population').text('Population: ' + cityData.population);
 
         for(var i = 0; i < weather.length; i++) {
-            weatherHtml += '<p>' + weather[i].dt_txt + ' ' + weather[i].main.temp + '&deg;C' + ' ';
-            weatherHtml += '<i class="wi ' + changeIcon(weather[i].weather[0].icon) + '"></i>' + ' ' + weather[i].weather[0].description + '"></p>';
+            weatherHtml += '<div class = "slider_element">' + weather[i].dt_txt + ' ' + weather[i].main.temp + '&deg;C' + ' ';
+            weatherHtml += '<i class="wi ' + changeIcon(weather[i].weather[0].icon) + '"></i>' + ' ' + weather[i].weather[0].description + '</div>';
         }
 
         $weather.html(weatherHtml);
@@ -112,14 +127,10 @@ $(document).ready(function () {
         }
     }
 
-    function objectLenght(obj) {
-        var counter = 0;
-        for (var key in obj) {
-            console.log(key);
-            counter++;
-        }
-        return counter;
-    }
+    //$('.slick_holder').slick({
+    //    slidesToShow: 3,
+    //    slidesToScroll: 3,
+    //    arrows: true
+    //});
 
-    //console.log(objectLenght(convertArray));
 });

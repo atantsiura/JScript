@@ -5,6 +5,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.5/css/weather-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,7 +14,8 @@
 <div class="maincontainer">
     <div class="citypart">
         <p>Введите название города</p>
-        <input id="cityname" type="text" placeholder="Город">
+        <input id="city_input" type="text" placeholder="Город">
+        <button id="city_button">Отправить</button>
         <div class="wrongcity">
             <p> Город введен неверно </p>
         </div>
@@ -35,11 +37,26 @@
         </div>
     </div>
 
-    <div id="weatherpart">
-        <div class="dayweather">
-            <div class="detailed hide">
+    <div id="weatherpart" class="slick_holder">
 
-            </div>
+    </div>
+    <div class="dayweather">
+        <div class="detailed hide">
+
+        </div>
+    </div>
+    <div class="slick_holder">
+        <div class="slick_item">
+            <p>Кусок слайдера для теста</p>
+        </div>
+        <div class="slick_item">
+            <p>Кусок слайдера для теста2</p>
+        </div>
+        <div class="slick_item">
+            <p>Кусок слайдера для теста3</p>
+        </div>
+        <div class="slick_item">
+            <p>Кусок слайдера для теста4</p>
         </div>
     </div>
 </div>
@@ -49,6 +66,7 @@
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
