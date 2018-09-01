@@ -45,15 +45,15 @@ $(document).ready(function () {
             request.done(function (msg) {
                 display(msg);
                 //showMap(mapElement, msg.city.coord);
+                $('.slick_holder').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    arrows: true
+                });
 
             });
             request.fail(function( jqXHR, textStatus ) {
                 alert( "Request failed: " + textStatus );
-            });
-            $('.slick_holder').slick({
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                arrows: true
             });
         } else {
             alert('Название города не введено');
