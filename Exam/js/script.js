@@ -40,7 +40,7 @@ $(document).ready(function () {
             markerplace = new google.maps.LatLng(latmarker, lonmarker),
             marker = new google.maps.Marker({
                 position: markerplace,
-                icon:'../img/favicon.png',
+                icon:'img/favicon.png',
                 animation: google.maps.Animation.BOUNCE
             }),
             mapProp= {

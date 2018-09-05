@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename'),
     notify = require('gulp-notify'),
-    // uglify = require('gulp-uglify'),
+    uglify = require('gulp-uglify'),
     watch = require('gulp-watch'),
     imagemin = require('gulp-imagemin'),
     bs = require('browser-sync').create();
@@ -21,7 +21,7 @@ gulp.task('browsersync', function () {
 
 gulp.task('watch', function() {
     gulp.watch('scss/**/*.scss', ['style']);
-    // gulp.watch('src/js/script.js', ['script']);
+    gulp.watch('src/js/script.js', ['script']);
     bs.watch('*.html').on('change', bs.reload);
 });
 
