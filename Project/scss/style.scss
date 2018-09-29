@@ -1,5 +1,4 @@
 @import "variables";
-@import "mixin";
 @import "normalize";
 
 //Slickslider styling
@@ -274,12 +273,10 @@ p {
   display: flex;
   justify-content: space-around;
   z-index: 0;
-  transition: all 0.8s;
+  transition: all 0.6s;
 
-  p {
-    display: block;
-    color: white;
-    text-align: center;
+
+  .text-holder {
     align-self: center;
   }
 }
@@ -388,12 +385,23 @@ section#about {
 
     &:hover .hover-effect {
         z-index: 3;
-        opacity: 1;
+        opacity: 0.85;
     }
 
     &:hover .hover-green {
-        opacity: 1;
+        opacity: 0.85;
         z-index: 2;
+    }
+
+    .hover-effect {
+      background: linear-gradient(to bottom, rgba(243, 129, 129, .99), rgba(252, 227, 138, .99)) center no-repeat;
+
+      i {
+        font-size: 20px;
+      }
+      h4 {
+        font-size: 18px;
+      }
     }
   }
 }
@@ -572,6 +580,16 @@ section#team {
         text-transform: none;
       }
 
+      .hover-effect {
+        i {
+          font-size: 40px;
+        }
+        h6 {
+          font-size: 16px;
+          padding: 15px 0;
+        }
+      }
+
       &:hover .hover-effect {
         z-index: 3;
         opacity: 1;
@@ -590,15 +608,35 @@ section#work {
     max-width: 25%;
 
     .hover-effect {
+      background: linear-gradient(to bottom, rgba(243, 129, 129, .99), rgba(252, 227, 138, .99)) center no-repeat;
       border: none;
       border-radius: 0;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
+      text-align: center;
+
+      .text-holder {
+        align-self: center;
+        color: white;
+
+        img {
+          width: 35px;
+          margin-bottom: 15px;
+        }
+        h4 {
+          font-size: 14px;
+        }
+        p {
+          font-size: 15px;
+          font-style: italic;
+        }
+      }
+
 
       &:hover {
-        opacity: 1;
+        opacity: 0.85;
       }
     }
   }
@@ -651,6 +689,42 @@ section.clients {
 
 section#blog {
   padding-bottom: 120px;
+
+  .image-holder {
+    position: relative;
+    transition: 0.5s;
+
+    .green-date {
+      position: absolute;
+      bottom: 10px;
+      left: -10px;
+      width: 50px;
+      //height: 70px;
+      background-color: $tealcolor;
+      text-align: center;
+      padding: 12px 0;
+
+      p {
+        margin: 0;
+        color: white;
+      }
+
+      p.day {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      p.month {
+        font-size: 15px;
+        font-style: italic;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
 
   .content-holder {
     min-height: 385px;

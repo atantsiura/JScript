@@ -129,10 +129,10 @@ $(document).ready(function () {
     //Google Map initiation and options
 
     var mapHolder = document.getElementById('map'),
-        lat = 49.569483,
-        lon = 34.586399,
-        latmarker = 49.568583,
-        lonmarker = 34.585416;
+        lat = 47.608,
+        lon = -122.335,
+        latmarker = 47.609689,
+        lonmarker = -122.338956;
 
     displayMap(mapHolder, lat, lon);
 
@@ -142,7 +142,7 @@ $(document).ready(function () {
             markerplace = new google.maps.LatLng(latmarker, lonmarker),
             marker = new google.maps.Marker({
                 position: markerplace,
-                //icon:'img/favicon.png',
+                icon:'img/HOME.svg',
                 animation: google.maps.Animation.BOUNCE
             }),
             mapProp= {
@@ -182,7 +182,10 @@ $(document).ready(function () {
         var template = _.template('<div class="ajax-slider-item"><div  class="img-wrapper">\n' +
             '            <img class="img-responsive teamMemberPhoto" src="<%- src %>" alt="Team member image">\n' +
             '            <div class="hover-effect">\n' +
-            '                <p>More details:</p>\n' +
+            '                <div class="text-holder">\n' +
+            '                    <i class="fas fa-hand-point-up"></i>\n' +
+            '                    <h6>Click for details</h6>\n' +
+            '                </div>\n' +
             '            </div>\n' +
             '            <div class="hover-green">\n' +
             '            </div>\n' +

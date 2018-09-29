@@ -1,0 +1,151 @@
+@import "variables";
+@import "mixin";
+@import "normalize";
+
+@font-face {
+  font-family: MyriadPro;
+  src: url('../fonts/MyriadPro-Black.eot');
+  src: url('../fonts/MyriadPro-Black.ttf') format('ttf'),
+  url("../fonts/MyriadPro-Black.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+//Global styles for whole document
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.05em;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: normal;
+  margin: 0;
+  text-transform: uppercase;
+}
+ul {
+  list-style: none;
+}
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.maincontainer {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+header {
+  background: url("../img/bg4.jpg") center no-repeat;
+  background-size: cover;
+  color: white;
+
+  .navbar-default {
+    background-color: transparent;
+    border: none;
+    color: white;
+    //margin-bottom: 225px;
+
+    .navbar-nav li {
+      margin-left: 40px;
+
+      &:after {
+        content: "//";
+        position: absolute;
+        top: 50%;
+        right: -25px;
+        transform: translateY(-42%);
+      }
+
+      &:last-child :after {
+        content: "";
+      }
+
+      a {
+        color: white;
+      }
+    }
+
+    .navbar-brand {
+      height: auto;
+      span {
+        display: inline-block;
+        color: white;
+        font-size: 45px;
+        line-height: 150px;
+        width: 150px;
+        text-align: center;
+        border: 2px solid white;
+        border-radius: 50%;
+      }
+    }
+
+    .navbar-nav {
+      margin-top: 75px;
+    }
+  }
+  .textholder {
+    text-align: center;
+    padding: 225px 0 335px;
+
+    h2 {
+      padding-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: bold;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+section.about {
+  .headerholder {
+    padding: 115px 75px 150px;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+
+    h2 {
+      //display: table-cell;
+      border-right: 2px solid $orangecolor;
+
+    }
+    p {
+      //display: table-cell;
+    }
+  }
+
+  .textholder {
+    padding-bottom: 125px;
+    //display: flex;
+
+    .svg-holder {
+      //float: left;
+      display: inline-block;
+      color: $orangecolor;
+      padding: 45px 45px;
+      height: 125px;
+      width: 125px;
+      //line-height: 125px;
+      border: 2px solid $orangecolor;
+      border-radius: 50%;
+    }
+    .text {
+      //float: right;
+      display: inline-block;
+      h3,h5,p {
+        display: inline-block;
+      }
+    }
+  }
+}
