@@ -67,7 +67,8 @@
 
 .slick-prev
 {
-  left: -5px;
+  z-index: 9;
+  left: 0px;
 }
 
 .slick-prev:before
@@ -77,7 +78,8 @@
 
 .slick-next
 {
-  right: -5px;
+  z-index: 9;
+  right: 0px;
 }
 
 .slick-next:before
@@ -255,6 +257,7 @@ p {
 .title-p {
   font-size: 15px;
   max-width: 965px;
+  padding: 0 10px;
   margin: 0 auto 100px;
   text-align: center;
   color: #cccccc;
@@ -309,6 +312,23 @@ header {
     margin-bottom: 160px;
     color: #ffffff;
 
+    .navbar-toggle {
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+    }
+
+    .navbar-toggle:focus, .navbar-default {
+      background-color: transparent;
+    }
+    .navbar-toggle .icon-bar {
+      background-color: white;
+    }
+
+
     .navbar-brand {
       font-family: 'Montserrat', sans-serif;
       font-size: 30px;
@@ -323,33 +343,39 @@ header {
       }
     }
 
-    .navbar-nav li a {
-      border-bottom: 2px solid transparent;
-      color: white;
-      padding: 12px 0;
-      margin-right: 55px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 14px;
-      text-transform: uppercase;
-      transition: 0.5s;
-
-      &:focus {
+    .navbar-nav li {
+      a {
+        border-bottom: 2px solid transparent;
         color: white;
+        padding: 12px 0;
+        margin-right: 55px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+        transition: 0.5s;
+
+        &:focus {
+          color: white;
+        }
+
+        &:hover {
+          color: $sandcolor;
+          border-color: $sandcolor;
+          transform: scale(1.2);
+        }
       }
 
-      &:hover {
-        color: $sandcolor;
-        border-color: $sandcolor;
-        transform: scale(1.2);
+      &:last-child a {
+        margin-right: 0;
       }
     }
   }
 
   .title-holder {
-    padding-bottom: 62px;
+    padding: 0 0 60px;
 
     h1 {
-      font-size: 110px;
+      font-size: 140px;
       max-width: 900px;
       margin: 0 auto;
     }
@@ -375,13 +401,45 @@ header {
       transform: scale(1.2);
     }
   }
+
+  .go-top {
+    opacity: 0.5;
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    z-index: 10;
+    background-color: $sandcolor;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.5s;
+
+    &:hover {
+      opacity: 0.9;
+      transform: scale(1.2);
+    }
+
+    .link-holder {
+      border: 2px solid white;
+      border-radius: 5px;
+      color: white;
+      text-align: center;
+      padding: 5px 8px;
+
+      i {
+        font-size: 20px;
+      }
+    }
+  }
 }
 
 section#about {
   padding: 0 0 110px;
+  text-align: center;
 
   .img-wrapper {
     position: relative;
+    display: inline-block;
 
     &:hover .hover-effect {
         z-index: 3;
@@ -475,15 +533,37 @@ section.what-we-do {
     padding-bottom: 190px;
   }
 
-  .panel .panel-heading .panel-title a{
-      display: inline-block;
+  .panel .panel-heading .panel-title {
+    a {
+      display: block;
+      position: relative;
 
-    &:hover {
-      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:focus {
+        text-decoration: none;
+      }
+
+      &:after {
+        position: absolute;
+        content: url("../img/up.svg");
+        height: 14px;
+        width: 22px;
+        right: 0;
+        top: 0;
+      }
     }
-
-    &:focus {
-      text-decoration: none;
+    a.collapsed {
+      &:after {
+        position: absolute;
+        content: url("../img/down.svg");
+        height: 14px;
+        width: 22px;
+        right: 0;
+        top: 0;
+      }
     }
   }
 
@@ -503,6 +583,23 @@ section.what-we-do {
   p {
     color: #b9b9b9;
     font-style: italic;
+    text-align: justify;
+  }
+
+  .panel-body p {
+    padding-right: 10px;
+    max-height: 11vw;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #f5f5f5;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $tealcolor;
+    }
+
   }
 
   .slider-item {
@@ -528,6 +625,7 @@ section.what-we-do {
         padding-left: 60px;
         p {
           font-size: 24px;
+          text-align: left;
         }
 
         h5 {
@@ -606,6 +704,7 @@ section#team {
 section#work {
   .isotope-item {
     max-width: 25%;
+    min-width: 240px;
 
     .hover-effect {
       background: linear-gradient(to bottom, rgba(243, 129, 129, .99), rgba(252, 227, 138, .99)) center no-repeat;
@@ -690,6 +789,45 @@ section.clients {
 section#blog {
   padding-bottom: 120px;
 
+  .content-holder {
+    min-height: 385px;
+    max-width: 380px;
+    margin: 15px auto;
+    position: relative;
+
+    .text-holder {
+      h4 {
+        font-size: 14px;
+        padding: 20px 0;
+      }
+
+      .citates,.views {
+        display: inline-block;
+
+        img {
+          display: inline-block;
+        }
+
+        span {
+          font-size: 15px;
+          font-style: italic;
+        }
+      }
+
+      .views {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      .citates {
+        position: absolute;
+        bottom: 0;
+        left: 70px;
+      }
+    }
+  }
+
   .image-holder {
     position: relative;
     transition: 0.5s;
@@ -723,45 +861,6 @@ section#blog {
     &:hover {
       cursor: pointer;
       transform: scale(1.1);
-    }
-  }
-
-  .content-holder {
-    min-height: 385px;
-    max-width: 380px;
-    margin: 0 auto;
-    position: relative;
-
-    .text-holder {
-      h4 {
-        font-size: 14px;
-        padding: 20px 0;
-      }
-
-      .citates,.views {
-        display: inline-block;
-
-        img {
-          display: inline-block;
-        }
-
-        span {
-          font-size: 15px;
-          font-style: italic;
-        }
-      }
-
-      .views {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-      }
-
-      .citates {
-        position: absolute;
-        bottom: 0;
-        left: 70px;
-      }
     }
   }
 }
@@ -883,6 +982,11 @@ section#contact {
   }
 }
 
+.modal-header .close {
+  position: relative;
+  z-index: 1275;
+}
+
 .modal-dialog {
   background-color: lightgrey;
   width: 85vw;
@@ -975,25 +1079,28 @@ section#contact {
   }
 }
 
+@media all and (max-width: 991px) {
 
-
-/*@media all and (max-width: 992px) {
-
-  header .title-holder {
-    max-width: 600px;
-    h2 {
-      font-size: 52px;
+  header {
+    .navbar-default .navbar-nav li a {
+      margin-right: 25px;
     }
-    h1 {
-      font-size: 88px;
+    .title-holder {
+      max-width: 67vw;
+      h1 {
+        font-size: 88px;
+      }
+      h2 {
+        font-size: 52px;
+      }
     }
   }
-}*/
+}
 
 @media all and (max-width: 767px) {
 
   header .title-holder {
-    max-width: 600px;
+    max-width: 67vw;
     h2 {
       font-size: 42px;
     }
@@ -1005,6 +1112,16 @@ section#contact {
   section.counter .counter-holder {
     vertical-align: top;
     max-width: 152px;
+  }
+
+  section.design {
+    .img-absolute {
+      max-width: 180px;
+    }
+  }
+
+  section#services .content-holder .text-holder {
+    max-width: 480px;
   }
 
   section.what-we-do .slider-item .item-container {
@@ -1022,10 +1139,6 @@ section#contact {
   }
 }
 
-@media (min-width: 768px) {
 
-  .modal-dialog {
-    width: 85vw;
-    margin: 30px auto;
-  }
-}
+
+
