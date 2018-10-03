@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/fm.revealator.jquery.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="img/m-logo.png">
 </head>
@@ -61,7 +62,7 @@
 <!--Section "About" with bootstrap grid-->
 <section id="about">
     <div class="maincontainer">
-        <div class="title-holder">
+        <div class="title-holder revealator-zoomin revealator-duration6">
             <h3>What we do</h3>
             <h2>Story about us</h2>
         </div>
@@ -142,7 +143,7 @@
 <!--Section Services with bootstrap grid-->
 <section id="services">
     <div class="maincontainer">
-        <div class="title-holder">
+        <div class="title-holder revealator-slideright revealator-duration6">
             <h3>We work with</h3>
             <h2>Amazing services</h2>
         </div>
@@ -222,22 +223,25 @@
 <!--Section Design, just a couple of photos with absolute positionin-->
 <section class="design">
     <div class="maincontainer">
-        <div class="title-holder">
+        <div class="title-holder revealator-slideleft revealator-duration6">
             <h3>For all devices</h3>
             <h2>Unique design</h2>
         </div>
-        <img class="img-restonsive" src="img/tablet.png" alt="Tablet">
+        <img class="img-restonsive img-big" src="img/tablet.png" alt="Tablet">
         <img class="img-absolute" src="img/smart.png" alt="Smartphone">
     </div>
 </section>
 <!--Section "What we do" with bootstrap grid and bootstrap accordion and slick-slider-->
 <section class="what-we-do">
     <div class="maincontainer">
-        <div class="title-holder">
+        <div class="title-holder revealator-slideright revealator-duration6">
             <h3>Service</h3>
             <h2>What we do</h2>
         </div>
-        <div class="container-fluid padder">
+        <p class="title-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+            ut aliquip ex ea commodo consequat. </p>
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <div class="content-holder">
@@ -326,7 +330,7 @@
                 </div>
             </div>
         </div>
-        <div class="slider-first">
+        <div class="slider-first padder">
             <div class="slider-item">
                 <div class="item-container">
                     <div class="image-wrapper">
@@ -357,7 +361,7 @@
 <!--Section Team with dynamic generating conten with the AJAX-request, slick slider and on-click modale window-->
 <section id="team">
     <div class="maincontainer">
-        <div class="title-holder">
+        <div class="title-holder revealator-slideleft revealator-duration6">
             <h3>Who we are</h3>
             <h2>Meet our team</h2>
         </div>
@@ -370,15 +374,11 @@
 
     </div>
 </section>
-<section class="graphic-icons">
-    <div class="maincontainer">
 
-    </div>
-</section>
 <!--Section Work with isotope layout-->
 <section id="work">
     <div class="maincontainer">
-        <div class="title-holder">
+        <div class="title-holder revealator-slideright revealator-duration6">
             <h3>What we do</h3>
             <h2>Some of our work</h2>
         </div>
@@ -473,10 +473,11 @@
         </div>
     </div>
 </section>
+
 <!--Section Client with bootstrap grid-->
 <section class="clients">
     <div class="maincontainer">
-        <div class="title-holder">
+        <div class="title-holder revealator-slideleft revealator-duration6">
             <h3>Happy clients</h3>
             <h2>What people say</h2>
         </div>
@@ -546,7 +547,7 @@
 <!--Section Blog with bootstrap grid-->
 <section id="blog">
     <div class="maincontainer">
-        <div class="title-holder">
+        <div class="title-holder revealator-slideright revealator-duration6">
             <h3>Our stories</h3>
             <h2>Latest blog</h2>
         </div>
@@ -629,7 +630,7 @@
 </section>
 <!--Section Map with bootstrap modal window, that contains Google map created with JS-->
 <section class="map">
-    <div class="maincontainer">
+    <div class="maincontainer  revealator-zoomin revealator-duration8">
         <a href="#" data-toggle="modal" data-target="#mapModal">
             <img src="img/marker.svg" alt="Map icon">
             <h2>Open map</h2>
@@ -639,7 +640,7 @@
 <!--Section Contact with bootstrap horizontal form, whit HTML validation. Form sending blocke due to no backend at the moment-->
 <section id="contact">
     <div class="maincontainer">
-        <div class="title-holder">
+        <div class="title-holder revealator-slideright revealator-duration6">
             <h3>Loved us?</h3>
             <h2>Contact us</h2>
         </div>
@@ -779,7 +780,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
-<script src="js/jquery.spincrement.min.js"></script>
+<script src="js/lib/jquery.spincrement.min.js"></script>
+<script src="js/lib/fm.revealator.jquery.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

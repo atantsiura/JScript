@@ -11,7 +11,7 @@
   line-height: 0;
 
   position: absolute;
-  top: 50%;
+  top: 60%;
 
   display: block;
 
@@ -68,7 +68,7 @@
 .slick-prev
 {
   z-index: 9;
-  left: 0px;
+  left: 10px;
 }
 
 .slick-prev:before
@@ -79,7 +79,7 @@
 .slick-next
 {
   z-index: 9;
-  right: 0px;
+  right: 10px;
 }
 
 .slick-next:before
@@ -225,7 +225,7 @@ p {
   max-width: 885px;
   margin: 0 auto 50px;
   position: relative;
-  padding: 90px 0 40px;
+  padding: 110px 0 40px;
   text-align: center;
 
   h2 {
@@ -235,6 +235,7 @@ p {
   }
 
   h3 {
+    padding-bottom: 12px;
     font-family: 'Kaushan Script', cursive;
     font-size: 24px;
     text-transform: none;
@@ -314,8 +315,10 @@ header {
 
     .navbar-toggle {
       transition: 0.5s;
+      background-color: transparent;
 
       &:hover {
+        background-color: transparent;
         transform: scale(1.2);
       }
 
@@ -348,7 +351,7 @@ header {
         border-bottom: 2px solid transparent;
         color: white;
         padding: 12px 0;
-        margin-right: 55px;
+        margin-right: 40px;
         font-family: 'Montserrat', sans-serif;
         font-size: 14px;
         text-transform: uppercase;
@@ -381,6 +384,7 @@ header {
     }
 
     h2 {
+      padding-bottom: 4px;
       font-family: 'Kaushan Script', cursive;
       font-size: 72px;
       text-transform: none;
@@ -390,7 +394,7 @@ header {
   .btn-header {
     display: inline-block;
     border: 2px solid white;
-    padding: 10px 30px;
+    padding: 8px 27px;
     background: transparent;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -437,6 +441,10 @@ section#about {
   padding: 0 0 110px;
   text-align: center;
 
+  .title-holder {
+    padding-top: 90px;
+  }
+
   .img-wrapper {
     position: relative;
     display: inline-block;
@@ -466,7 +474,7 @@ section#about {
 
 
 section.counter {
-  padding: 90px 0;
+  padding: 80px 0;
   background-color: $tealcolor;
   font-size: 0;
   text-align: center;
@@ -477,7 +485,7 @@ section.counter {
     color: white;
     h3 {
       font-size: 64px;
-      padding-bottom: 30px;
+      padding-bottom: 20px;
     }
     h4 {
       font-size: 14px;
@@ -488,11 +496,12 @@ section.counter {
 }
 
 section#services {
-  padding-bottom: 100px;
+  padding: 2px 0 45px;
 
   .content-holder {
+    padding-top: 18px;
     display: table;
-    min-height: 150px;
+    min-height: 170px;
 
     .image-holder {
       display: table-cell;
@@ -506,7 +515,7 @@ section#services {
       h4 {
         font-size: 15px;
         padding-bottom: 20px;
-        //font-weight: normal;
+
       }
       p {
         color: #b9b9b9;
@@ -520,17 +529,29 @@ section.design {
   background: white url("../img/bgdesign.jpg") center no-repeat;
   background-size: cover;
 
+  .title-holder {
+    //margin-bottom: 5px;
+  }
+
+  .img-big {
+    max-height: 575px;
+  }
+
   .img-absolute {
     position: absolute;
-    bottom: -65px;
-    left: 58%;
+    bottom: -88px;
+    left: 57%;
   }
 }
 
 section.what-we-do {
 
+  .title-p {
+    margin-bottom: 90px;
+  }
+
   .padder {
-    padding-bottom: 190px;
+    padding: 190px 0 60px;
   }
 
   .panel .panel-heading .panel-title {
@@ -606,12 +627,12 @@ section.what-we-do {
 
     .item-container {
       display: flex;
-      padding: 0 70px;
+      padding: 0 105px;
 
       .image-wrapper {
         border: 2px solid $tealcolor;
         flex-basis: 145px;
-        padding: 40px 40px;
+        padding: 42px 40px;
         align-self: flex-start;
         flex-shrink: 0;
 
@@ -622,14 +643,14 @@ section.what-we-do {
 
       .slick-text {
         flex-shrink: 1;
-        padding-left: 60px;
+        padding-left: 70px;
         p {
           font-size: 24px;
           text-align: left;
         }
 
         h5 {
-          padding-left: 70px;
+          padding: 12px 0 0 70px;
           font-family: 'Kaushan Script', cursive;
           font-size: 24px;
           text-transform: none;
@@ -649,8 +670,15 @@ section.what-we-do {
 }
 
 section#team {
+  background: white url("../img/bgdesign.jpg") center no-repeat;
+  background-size: cover;
+
   .maincontainer {
     padding-bottom: 160px;
+
+    .title-p {
+      margin-bottom: 80px;
+    }
 
     .slider-two {
       display: none;
@@ -733,7 +761,6 @@ section#work {
         }
       }
 
-
       &:hover {
         opacity: 0.85;
       }
@@ -742,13 +769,14 @@ section#work {
 }
 
 section.clients {
-  padding: 110px 0 125px;
+  padding: 2px 0 60px;
   background: lightgray url("../img/bgclients.jpg") center no-repeat;
   background-size: cover;
 
   .client {
+    padding-top: 25px;
     display: table;
-    min-height: 235px;
+    min-height: 245px;
 
     .img-wrapper {
       display: table-cell;
@@ -758,7 +786,7 @@ section.clients {
     .text-holder {
       display: table-cell;
       vertical-align: top;
-      padding: 10px 10px 0 30px;
+      padding: 10px 10px 0 65px;
 
       h4 {
         font-size: 14px;
@@ -783,11 +811,14 @@ section.clients {
       }
     }
   }
-
 }
 
 section#blog {
-  padding-bottom: 120px;
+  padding-bottom: 100px;
+
+  .title-holder {
+    margin-bottom: 35px;
+  }
 
   .content-holder {
     min-height: 385px;
@@ -866,7 +897,7 @@ section#blog {
 }
 
 section.map {
-  padding: 60px 0;
+  padding: 58px 0;
   background: lightgray url("../img/bgmap.jpg") center no-repeat;
   background-size: cover;
   text-align: center;
@@ -878,12 +909,13 @@ section.map {
     transition: 0.5s;
 
     img {
-      height: 30px;
-      width: 30px;
+      height: 23px;
+      width: 18px;
     }
 
     h2 {
-      padding-top: 20px;
+      padding-top: 10px;
+      font-size: 24px;
     }
 
     &:after {
@@ -1125,9 +1157,10 @@ section#contact {
   }
 
   section.what-we-do .slider-item .item-container {
-    padding: 0 10px;
+    padding: 0 35px;
 
     .image-wrapper {
+      flex-basis: 85px;
       width: 85px;
       height: 85px;
       padding: 10px 10px;
